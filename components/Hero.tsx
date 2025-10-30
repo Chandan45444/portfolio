@@ -3,6 +3,12 @@
 import { useEffect, useRef } from "react";
 import { animate, createTimeline } from "animejs";
 import { ArrowDown } from "lucide-react";
+import dynamic from "next/dynamic";
+
+const Scene3D = dynamic(() => import("@/components/Scene3D"), {
+  ssr: false,
+  loading: () => <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10" />,
+});
 
 export default function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -61,6 +67,8 @@ export default function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background/50" />
+      
+      <Scene3D />
       
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl float-element" />

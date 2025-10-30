@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev -H 0.0.0.0",
+    "dev": "next dev -H 0.0.0.0 -p 5000",
     "build": "next build",
-    "start": "next start -H 0.0.0.0",
+    "start": "next start -H 0.0.0.0 -p 5000",
     "lint": "next lint"
   },
   "keywords": [],
@@ -15,6 +15,7 @@
   "dependencies": {
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.4.0",
+    "@tailwindcss/postcss": "^4.1.16",
     "@types/animejs": "^3.1.13",
     "@types/node": "^24.9.2",
     "@types/react": "^19.2.2",
