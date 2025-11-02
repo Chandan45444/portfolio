@@ -2,31 +2,25 @@
 
 import { useEffect, useRef } from "react";
 import { animate, stagger } from "animejs";
-import { Mail, Github, Linkedin, Twitter, MapPin, Phone } from "lucide-react";
+import { Mail, Github, Linkedin, MapPin, Phone } from "lucide-react";
 
 const socialLinks = [
   {
     name: "GitHub",
     icon: Github,
-    url: "https://github.com/yourusername",
+    url: "https://github.com/Chandan45444",
     color: "hover:text-purple-500",
   },
   {
     name: "LinkedIn",
     icon: Linkedin,
-    url: "https://linkedin.com/in/yourusername",
+    url: "https://linkedin.com/in/chandan-kumarc",
     color: "hover:text-blue-500",
-  },
-  {
-    name: "Twitter",
-    icon: Twitter,
-    url: "https://twitter.com/yourusername",
-    color: "hover:text-sky-500",
   },
   {
     name: "Email",
     icon: Mail,
-    url: "mailto:your.email@example.com",
+    url: "mailto:cchandankumar2003@gmail.com",
     color: "hover:text-red-500",
   },
 ];
@@ -99,26 +93,28 @@ export default function Contact() {
                 Let's work together
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm always open to discussing new projects, creative ideas, or 
-                opportunities to be part of your visions. Feel free to reach out 
-                through any of the platforms below.
+                Passionate Information Science Engineering student leveraging a
+                strong foundation in Java and SQL. I enjoy working on full-stack projects and exploring new technologies — currently open to internships and early-career
+                roles.
               </p>
             </div>
-            
+
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-muted-foreground">
                 <MapPin size={20} className="text-primary" />
-                <span>Your City, Country</span>
+                <span>Bengaluru, Karnataka, India</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Mail size={20} className="text-primary" />
-                <a href="mailto:your.email@example.com" className="hover:text-foreground transition-colors">
-                  your.email@example.com
+                <a href="mailto:cchandankumar2003@gmail.com" className="hover:text-foreground transition-colors">
+                  cchandankumar2003@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Phone size={20} className="text-primary" />
-                <span>+1 (123) 456-7890</span>
+                <a href="tel:+918660619759" className="hover:text-foreground transition-colors">
+                  +91 8660619759
+                </a>
               </div>
             </div>
           </div>
@@ -143,17 +139,13 @@ export default function Contact() {
               ))}
             </div>
             
-            <div className="mt-8 p-4 bg-muted/50 rounded-lg text-center">
-              <p className="text-sm text-muted-foreground">
-                Available for freelance work and full-time opportunities
-              </p>
-            </div>
+           
           </div>
         </div>
         
         <div className="mt-16 pt-8 border-t border-border text-center">
           <p className="text-muted-foreground">
-            © {new Date().getFullYear()} Your Name. All rights reserved.
+            © {new Date().getFullYear()} Chandan Kumar C. All rights reserved.
           </p>
         </div>
       </div>

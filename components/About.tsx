@@ -59,44 +59,28 @@ export default function About() {
         <div ref={contentRef} className="grid md:grid-cols-2 gap-12 opacity-0">
           <div className="space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm a passionate full-stack developer with a keen eye for creating 
-              beautiful, functional, and user-friendly digital experiences. With 
-              expertise in modern web technologies, I bring ideas to life through 
-              clean code and thoughtful design.
+             I'm Chandan Kumar C, a 2025 Information Science Engineering graduate from Maharaja Institute of Technology, Mysore (CGPA: 8.03), with a strong foundation in Java, SQL, and full-stack development. I’m a certified AI DevOps Engineer (Skill India / NASSCOM) and have interned at Runshaw Technologies, contributing to Flutter mobile app features. My key projects include CNN-based Kidney Stone Detection, Career Navigator (Next.js & MongoDB Atlas), and a Hotel Management System. I’m passionate about developing end-to-end solutions that integrate AI, cloud, and web technologies.
             </p>
-            
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              My journey in software development started several years ago, and 
-              since then, I've been constantly learning and evolving with the 
-              ever-changing landscape of technology. I specialize in building 
-              scalable web applications that make a difference.
-            </p>
-            
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              When I'm not coding, you can find me exploring new technologies, 
-              contributing to open-source projects, or sharing my knowledge 
-              with the developer community.
-            </p>
+
           </div>
-          
+
           <div className="bg-card border border-border rounded-lg p-8 space-y-6">
             <h3 className="text-2xl font-semibold text-foreground">Quick Facts</h3>
-            <div className="space-y-4">
+            <div className="space-y-8">
               <div>
-                <p className="text-sm text-muted-foreground">Location</p>
-                <p className="text-lg text-foreground">Your City, Country</p>
+                <p className="text-lg text-foreground mb-2">Location</p>
+                <p className="text-base text-muted-foreground">Bengaluru, Karnataka, India</p>
               </div>
+             
               <div>
-                <p className="text-sm text-muted-foreground">Experience</p>
-                <p className="text-lg text-foreground">X+ Years in Development</p>
+                <p className="text-lg text-foreground mb-2">Education</p>
+                <p className="text-base text-muted-foreground">B.E. Information Science — Maharaja Institute of Technology Mysore (CGPA: 8.03/10)</p>
               </div>
+             
               <div>
-                <p className="text-sm text-muted-foreground">Focus</p>
-                <p className="text-lg text-foreground">Full-Stack Development</p>
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Availability</p>
-                <p className="text-lg text-foreground">Open to opportunities</p>
+                <p className="text-lg text-foreground mb-2">Certifications</p>
+                <p className="text-base text-muted-foreground">• Front End Development — Great Learning (Sep 2024)</p>
+                <p className="text-base text-muted-foreground">• Introduction to Python — Infosys Springboard (Dec 2023)</p>
               </div>
             </div>
           </div>

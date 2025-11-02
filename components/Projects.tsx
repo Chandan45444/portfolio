@@ -3,43 +3,35 @@
 import { useEffect, useRef, useState } from "react";
 import { animate, stagger } from "animejs";
 import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
+import cnImage from "@/app/image/cn.png";
+import kidneyImage from "@/app/image/kidney.png";
+import hotelImage from "@/app/image/hotel.png";
 
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
-    github: "#",
-    demo: "#",
+    title: "Career Navigator",
+    description: "AI-powered coding interview prep platform built with modern web technologies. Features personalized learning paths and real-time code execution through JDoodle API integration.",
+    tech: ["Next.js", "TypeScript", "MongoDB Atlas", "Gemini AI", "JDoodle API"],
+    github: "https://github.com/Chandan45444/career_navigator",
+    demo: "https://career-navigator-iota.vercel.app/",
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "Collaborative task management tool with real-time updates, team collaboration, and project tracking.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io"],
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
-    github: "#",
-    demo: "#",
+    title: "Kidney Stone Detection",
+    description: "Deep learning model for kidney stone detection using CT scan images. Implemented using CNNs with advanced image preprocessing and achieved high accuracy in classification.",
+  tech: ["Python", "Keras", "OpenCV", "scikit-learn", "TensorFlow"],
+  image: kidneyImage,
+    
   },
   {
     id: 3,
-    title: "AI Content Generator",
-    description: "AI-powered content generation platform using machine learning to create high-quality written content.",
-    tech: ["Python", "OpenAI", "FastAPI", "React"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
-    github: "#",
-    demo: "#",
-  },
-  {
-    id: 4,
-    title: "Social Media Dashboard",
-    description: "Analytics dashboard for social media management with data visualization and reporting features.",
-    tech: ["Vue.js", "D3.js", "Express", "MySQL"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-    github: "#",
-    demo: "#",
+    title: "Hotel Management System",
+    description: "Comprehensive hotel management solution implementing core functionalities including booking management, guest check-in/check-out, and billing system for seamless operations.",
+    tech: ["HTML", "MySQL", "CSS", "JavaScript"],
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
+    
   },
 ];
 
@@ -106,9 +98,35 @@ export default function Projects() {
             >
               <div className="relative h-48 overflow-hidden bg-muted">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20" />
-                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                  Project Image
-                </div>
+                {project.id === 1 ? (
+                  <Image
+                    src={cnImage}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                ) : project.id === 2 ? (
+                  <Image
+                    src={kidneyImage}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                ) : project.id === 3 ? (
+                  <Image
+                    src={hotelImage}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
+                    Project Image
+                  </div>
+                )}
               </div>
               
               <div className="p-6">
@@ -131,22 +149,29 @@ export default function Projects() {
                   ))}
                 </div>
                 
-                <div className="flex gap-4">
-                  <a
-                    href={project.github}
-                    className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <Github size={20} />
-                    <span className="text-sm">Code</span>
-                  </a>
-                  <a
-                    href={project.demo}
-                    className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <ExternalLink size={20} />
-                    <span className="text-sm">Demo</span>
-                  </a>
-                </div>
+                {/* Show Code/Demo links only for the Career Navigator (id:1) */}
+                {project.id === 1 ? (
+                  <div className="flex gap-4">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      <Github size={20} />
+                      <span className="text-sm">Code</span>
+                    </a>
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      <ExternalLink size={20} />
+                      <span className="text-sm">Demo</span>
+                    </a>
+                  </div>
+                ) : null}
               </div>
             </div>
           ))}

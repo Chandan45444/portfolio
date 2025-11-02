@@ -5,33 +5,31 @@ import { animate, stagger } from "animejs";
 
 const skillCategories = [
   {
-    category: "Frontend",
+    category: "Programming",
     skills: [
-      { name: "React", level: 95 },
-      { name: "Next.js", level: 90 },
-      { name: "TypeScript", level: 88 },
-      { name: "Tailwind CSS", level: 92 },
-      { name: "Vue.js", level: 80 },
+      { name: "Java", level: 80 },
+      { name: "SQL", level: 80 },
+      { name: "HTML/CSS", level: 70 },
+      
+     
     ],
   },
   {
-    category: "Backend",
+    category: "Frameworks & Databases",
     skills: [
-      { name: "Node.js", level: 90 },
-      { name: "Python", level: 85 },
-      { name: "PostgreSQL", level: 88 },
-      { name: "MongoDB", level: 82 },
-      { name: "GraphQL", level: 78 },
+      { name: "MySQL", level: 80 },
+      { name: "Django", level: 60 },
+      { name: "MongoDB", level: 60 },
     ],
   },
   {
     category: "Tools & Others",
     skills: [
-      { name: "Git", level: 93 },
-      { name: "Docker", level: 80 },
-      { name: "AWS", level: 75 },
-      { name: "CI/CD", level: 82 },
-      { name: "Testing", level: 85 },
+      { name: "VS Code", level: 70 },
+       { name: "MS Office", level: 70 },
+      { name: "Git & GitHub", level: 60 },
+     
+     
     ],
   },
 ];
@@ -68,11 +66,15 @@ export default function Skills() {
               skillBars.forEach((bar) => {
                 const level = bar.getAttribute("data-level");
                 if (level && bar instanceof HTMLElement) {
-                  animate(bar, {
-                    width: level + "%",
-                    duration: 1500,
-                    ease: "out(3)",
-                  });
+                  const n = Number(level);
+                  if (!Number.isNaN(n)) {
+                    // animate scaleX from 0 to level/100 so the bar fills exactly to the percentage
+                    animate(bar, {
+                      scaleX: n / 100,
+                      duration: 1500,
+                      easing: "out(3)",
+                    });
+                  }
                 }
               });
             }, 500);
@@ -126,13 +128,13 @@ export default function Skills() {
                         {skill.level}%
                       </span>
                     </div>
-                    <div className="h-2 bg-muted rounded-full overflow-hidden">
-                      <div
-                        className="skill-bar-fill h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
-                        data-level={skill.level}
-                        style={{ width: "0%" }}
-                      />
-                    </div>
+                            <div className="h-2 bg-muted rounded-full overflow-hidden">
+                              <div
+                                className="skill-bar-fill h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full origin-left"
+                                data-level={skill.level}
+                                style={{ transform: "scaleX(0)", width: "100%" }}
+                              />
+                            </div>
                   </div>
                 ))}
               </div>

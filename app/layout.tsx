@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-geist-sans" });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Your Name",
+  title: "Portfolio | Chandan Kumar C",
   description: "Full-stack developer portfolio showcasing projects and skills",
 };
 
@@ -16,7 +16,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} antialiased`}>
+        {children}
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.addEventListener('load', function() {
+              var nextBadge = document.querySelector('[href*="vercel.app"]');
+              if (nextBadge) nextBadge.remove();
+            });
+          `
+        }} />
+      </body>
     </html>
   );
 }

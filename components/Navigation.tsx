@@ -45,7 +45,7 @@ export default function Navigation() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium"
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-base md:text-lg font-medium"
                 >
                   {item.name}
                 </a>
@@ -71,7 +71,7 @@ export default function Navigation() {
               <a
                 key={item.name}
                 href={item.href}
-                className="block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="block px-3 py-2 text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
